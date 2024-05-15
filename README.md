@@ -900,7 +900,7 @@ print("run[CQ:image,file="+j["img"]+"]")
 
   - [x] 钓鱼商店
   - [x] 购买xxx [数量]
-  - [x] 出售xxx [数量]
+  - [x] 出售[xxx [数量]|所有垃圾]
   - [x] 钓鱼背包
   - [x] 装备[xx竿|三叉戟|美西螈]
   - [x] 附魔[诱钓|海之眷顾]
@@ -1071,6 +1071,14 @@ print("run[CQ:image,file="+j["img"]+"]")
 
 </details>
 <details>
+  <summary>抽扑克</summary>
+  
+  `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/poker"`
+
+  - [x] 抽扑克牌
+
+</details>
+<details>
   <summary>一群一天一夫一妻制群老婆</summary>
 
   `import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/qqwife"`
@@ -1134,6 +1142,14 @@ print("run[CQ:image,file="+j["img"]+"]")
   - [x] reborn
 
   - 注：本插件来源于[tgbot](https://github.com/YukariChiba/tgbot/blob/main/modules/Reborn.py)
+
+</details>
+<details>
+  <summary>打劫</summary>
+
+`import _ "github.com/FloatTech/ZeroBot-Plugin/plugin/robbery"`
+
+- [x] 打劫[对方Q号|@对方QQ]
 
 </details>
 <details>
