@@ -9,4 +9,5 @@ zerobot
 ZeroBot-Plugin*
 *.syso
 /.direnv
+/result
 cookie.json
