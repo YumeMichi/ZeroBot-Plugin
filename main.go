@@ -216,11 +216,11 @@ func init() {
 	h := flag.Bool("h", false, "Display this help.")
 	// g := flag.String("g", "127.0.0.1:3000", "Set webui url.")
 	// 直接写死 AccessToken 时，请更改下面第二个参数
-	token := flag.String("t", "", "Set AccessToken of WSClient.")
+	token := flag.String("t", "klab", "Set AccessToken of WSClient.")
 	// 直接写死 URL 时，请更改下面第二个参数
 	url := flag.String("u", "ws://127.0.0.1:6700", "Set Url of WSClient.")
 	// 默认昵称
-	adana := flag.String("n", "椛椛", "Set default nickname.")
+	adana := flag.String("n", "燐燐", "Set default nickname.")
 	prefix := flag.String("p", "/", "Set command prefix.")
 	runcfg := flag.String("c", "", "Run from config file.")
 	save := flag.String("s", "", "Save default config to file and exit.")
@@ -253,8 +253,8 @@ func init() {
 	}
 
 	// 通过代码写死的方式添加主人账号
-	// sus = append(sus, 12345678)
-	// sus = append(sus, 87654321)
+	sus = append(sus, 1157490807)
+	sus = append(sus, 785569962)
 
 	// 启用 webui
 	// go webctrl.RunGui(*g)
@@ -280,7 +280,7 @@ func init() {
 		logrus.Infoln("[main] 从", *runcfg, "读取配置文件")
 		return
 	}
-	config.W = []*driver.WSClient{driver.NewWebSocketClient(*url, *token)}
+	config.S = []*driver.WSServer{driver.NewWebSocketServer(16, *url, *token)}
 	config.Z = zero.Config{
 		NickName:       append([]string{*adana}, "ATRI", "atri", "亚托莉", "アトリ"),
 		CommandPrefix:  *prefix,
@@ -289,7 +289,7 @@ func init() {
 		Latency:        time.Duration(*late) * time.Millisecond,
 		MaxProcessTime: time.Duration(*maxpt) * time.Minute,
 		MarkMessage:    !*markmsg,
-		Driver:         []zero.Driver{config.W[0]},
+		Driver:         []zero.Driver{config.S[0]},
 	}
 
 	if *save != "" {
